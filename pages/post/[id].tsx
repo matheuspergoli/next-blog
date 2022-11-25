@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import parser from 'html-react-parser'
+import Post from '../../components/Post'
 import getPost from '../../service/getPost'
 import MainTitle from '../../layout/MainTitle'
 import getPostSlugs from '../../service/getPostSlugs'
@@ -8,13 +9,12 @@ import MainContainer from '../../layout/MainContainer'
 import getPreviewPosts from '../../service/getPreviewPosts'
 import { dehydrate, QueryClient, useQuery } from 'react-query'
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next'
-import Post from '../../components/Post'
 
 export const getStaticProps: GetStaticProps = async (context: GetStaticPropsContext) => {
 	const queryClient = new QueryClient()
 	const id = context?.params?.id as string
 
-	await queryClient.prefetchQuery(['post'], () => getPost(id))
+	await queryClient.prefetchQuery(['post', id], () => getPost(id))
 	await queryClient.prefetchQuery(['posts'], getPreviewPosts)
 
 	return {
@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 function PostPage(props: { id: string }) {
-	const { data } = useQuery({ queryKey: ['post'], queryFn: () => getPost(props.id) })
+	const { data } = useQuery({ queryKey: ['post', props.id], queryFn: () => getPost(props.id) })
 	const { data: morePosts } = useQuery({ queryKey: ['posts'], queryFn: getPreviewPosts })
 
 	return (
