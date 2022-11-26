@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import parser from 'html-react-parser'
 import Post from '../../components/Post'
 import getPost from '../../service/getPost'
 import SubTitle from '../../layout/SubTitle'
 import MainTitle from '../../layout/MainTitle'
+import { StructuredText } from 'react-datocms'
 import getPostSlugs from '../../service/getPostSlugs'
 import MainContainer from '../../layout/MainContainer'
 import getPreviewPosts from '../../service/getPreviewPosts'
@@ -60,7 +60,12 @@ function PostPage(props: { id: string }) {
 					</div>
 				</div>
 				<img src={data?.post.coverImage.url} alt='Cover image' className='max-h-hero-image object-cover w-full mb-20' />
-				<section className='post max-w-3xl mx-auto mb-20'>{parser(data?.post.content as string)}</section>
+				<section className='prose prose-img:h-96 prose-img:w-full prose-img:object-cover prose-sm md:prose-base max-w-3xl mx-auto mb-20'>
+					<StructuredText
+						data={data?.post.content}
+						renderBlock={({ record }: any) => <img src={record.image.url} alt={record.image.alt} />}
+					/>
+				</section>
 				<SubTitle>Mais Artigos</SubTitle>
 				<div className='grid grid-cols-1 gap-20 lg:grid-cols-2'>
 					{morePosts?.allPosts
