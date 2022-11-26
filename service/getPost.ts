@@ -9,6 +9,13 @@ const query = gql`
 			title
 			content {
 				value
+				blocks {
+					id
+					image {
+						url
+						alt
+					}
+				}
 			}
 			author {
 				id
