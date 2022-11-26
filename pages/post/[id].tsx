@@ -60,7 +60,7 @@ function PostPage(props: { id: string }) {
 					</div>
 				</div>
 				<img src={data?.post.coverImage.url} alt='Cover image' className='max-h-hero-image object-cover w-full mb-20' />
-				<section className='prose prose-img:h-96 prose-img:w-full prose-img:object-cover prose-sm md:prose-base max-w-3xl mx-auto mb-20'>
+				<section className='prose prose-sm md:prose-base max-w-3xl mx-auto mb-20'>
 					<StructuredText
 						data={data?.post.content}
 						renderBlock={({ record }: any) => <img src={record.image.url} alt={record.image.alt} />}
