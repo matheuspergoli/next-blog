@@ -3,6 +3,7 @@ import Link from 'next/link'
 import parser from 'html-react-parser'
 import Post from '../../components/Post'
 import getPost from '../../service/getPost'
+import SubTitle from '../../layout/SubTitle'
 import MainTitle from '../../layout/MainTitle'
 import getPostSlugs from '../../service/getPostSlugs'
 import MainContainer from '../../layout/MainContainer'
@@ -58,7 +59,7 @@ function PostPage(props: { id: string }) {
 				</div>
 				<img src={data?.post.coverImage.url} alt='Cover image' className='max-h-hero-image object-cover w-full mb-20' />
 				<section className='post max-w-3xl mx-auto mb-20'>{parser(data?.post.content as string)}</section>
-				<h2 className='text-center text-5xl font-bold mb-10 border-t pt-20 sm:text-left sm:text-7xl'>Mais Artigos</h2>
+				<SubTitle>Mais Artigos</SubTitle>
 				<div className='grid grid-cols-1 gap-20 lg:grid-cols-2'>
 					{morePosts?.allPosts
 						.filter((post) => post.slug !== props.id)
