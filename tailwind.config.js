@@ -4,7 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			maxHeight: {
-				'hero-image': '750px'
+				'hero-image': '500px'
 			},
 			maxWidth: {
 				'8xl': '1440px'
