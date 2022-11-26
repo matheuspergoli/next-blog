@@ -49,13 +49,15 @@ function PostPage(props: { id: string }) {
 				<title>Post</title>
 			</Head>
 			<MainContainer>
-				<Link href='/' className='block w-fit font-bold text-4xl my-20 transition hover:underline'>
-					Blog.
-				</Link>
-				<MainTitle>{data?.post.title}</MainTitle>
-				<div className='flex items-center gap-5 mb-10'>
-					<img src={data?.post.author.picture.url} alt='Author image' className='w-12 h-12 rounded-full' />
-					<p className='text-lg font-bold'>{data?.post.author.name}</p>
+				<div className='px-3 sm:p-0'>
+					<Link href='/' className='block w-fit font-bold text-4xl my-20 transition hover:underline'>
+						Blog.
+					</Link>
+					<MainTitle>{data?.post.title}</MainTitle>
+					<div className='flex items-center gap-5 mb-10'>
+						<img src={data?.post.author.picture.url} alt='Author image' className='w-12 h-12 rounded-full' />
+						<p className='text-lg font-bold'>{data?.post.author.name}</p>
+					</div>
 				</div>
 				<img src={data?.post.coverImage.url} alt='Cover image' className='max-h-hero-image object-cover w-full mb-20' />
 				<section className='post max-w-3xl mx-auto mb-20'>{parser(data?.post.content as string)}</section>
