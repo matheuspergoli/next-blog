@@ -4,7 +4,7 @@ function Post(props: PreviewPost) {
 	return (
 		<section className='w-full'>
 			<Link href={`/post/${props.slug}`}>
-				<img src={props.coverImage.url} alt='Post image' className='mb-5 w-full object-cover h-80' />
+				<img src={props.coverImage.url} alt='Post image' className='mb-5 w-full object-cover h-72' />
 			</Link>
 			<div className='px-3 sm:p-0'>
 				<Link href={`/post/${props.slug}`}>
