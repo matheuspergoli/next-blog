@@ -7,7 +7,9 @@ const query = gql`
 		post(filter: { slug: { eq: $eq } }) {
 			id
 			title
-			content(markdown: true)
+			content {
+				value
+			}
 			author {
 				id
 				name
