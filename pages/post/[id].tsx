@@ -50,7 +50,7 @@ function PostPage(props: { id: string }) {
 			</Head>
 			<MainContainer>
 				<div className='px-3 sm:p-0'>
-					<Link href='/' className='block w-fit font-bold text-4xl my-20 transition hover:underline'>
+					<Link href='/' className='block w-fit font-bold text-4xl my-10 transition hover:underline sm:my-20'>
 						Blog.
 					</Link>
 					<MainTitle>{data?.post.title}</MainTitle>
