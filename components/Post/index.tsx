@@ -11,7 +11,7 @@ function Post(props: PreviewPost) {
 					<h2 className='text-2xl mb-3 transition font-medium hover:underline'>{props.title}</h2>
 				</Link>
 				<h3 className='text-base mb-3 font-normal'>{props.excerpt}</h3>
-				<div className='flex items-center gap-5'>
+				<div className='flex items-center gap-4'>
 					<img src={props.author.picture.url} alt='Author image' className='w-12 h-12 rounded-full' />
 					<p className='text-lg font-bold'>{props.author.name}</p>
 				</div>
