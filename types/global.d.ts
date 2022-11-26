@@ -4,6 +4,7 @@ interface Post {
 		title: string
 		content: {
 			value: any
+			blocks: any
 		}
 		coverImage: {
 			url: string
