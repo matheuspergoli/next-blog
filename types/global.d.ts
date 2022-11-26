@@ -2,7 +2,9 @@ interface Post {
 	post: {
 		id: string
 		title: string
-		content: string
+		content: {
+			value: any
+		}
 		coverImage: {
 			url: string
 		}
