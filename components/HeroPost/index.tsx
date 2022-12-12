@@ -9,7 +9,7 @@ function HeroPost(props: PreviewPost) {
 				<img
 					src={props.coverImage.url}
 					alt='Post cover'
-					className='mb-5 max-h-60 w-full object-cover md:max-h-80 lg:max-h-96 xl:max-h-hero-image'
+					className='mb-5 max-h-72 w-full object-cover md:max-h-80 lg:max-h-96 xl:max-h-hero-image'
 				/>
 			</Link>
 			<div className='grid grid-cols-1 gap-5 px-3 sm:p-0 lg:grid-cols-2 lg:gap-10'>
