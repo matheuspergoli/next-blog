@@ -51,17 +51,21 @@ function PostPage(props: { id: string }) {
 			</Head>
 			<MainContainer>
 				<div className='px-3 sm:p-0'>
-					<Link href='/' className='block w-fit font-bold text-4xl my-10 transition hover:underline sm:my-20'>
+					<Link href='/' className='my-10 block w-fit text-4xl font-bold transition hover:underline sm:my-20'>
 						Blog.
 					</Link>
 					<MainTitle>{data?.post.title}</MainTitle>
-					<div className='flex items-center gap-5 mb-10'>
-						<img src={data?.post.author.picture.url} alt='Author image' className='w-12 h-12 rounded-full' />
+					<div className='mb-10 flex items-center gap-5'>
+						<img src={data?.post.author.picture.url} alt='Author image' className='h-12 w-12 rounded-full' />
 						<p className='text-lg font-bold'>{data?.post.author.name}</p>
 					</div>
 				</div>
-				<img src={data?.post.coverImage.url} alt='Cover image' className='max-h-hero-image object-cover w-full mb-20' />
-				<section className='prose prose-sm md:prose-base max-w-3xl mx-auto mb-20 px-3 sm:px-0'>
+				<img
+					src={data?.post.coverImage.url}
+					alt='Cover image'
+					className='mb-20 max-h-hero-image w-full object-cover'
+				/>
+				<section className='prose prose-sm mx-auto mb-20 max-w-3xl px-3 sm:px-0 md:prose-base'>
 					<StructuredText
 						data={data?.post.content}
 						renderBlock={({ record }: any) => <img src={record.image.url} alt={record.image.alt} />}
