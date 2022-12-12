@@ -35,7 +35,7 @@ function Home() {
 			<MainContainer>
 				<MainTitle>Blog.</MainTitle>
 				{heroPost ? <HeroPost {...heroPost} /> : null}
-				<SubTitle>Mais Artigos</SubTitle>
+				{morePosts?.length === 0 ? <SubTitle>Não há mais posts</SubTitle> : <SubTitle>Mais Artigos</SubTitle>}
 				<div className='grid grid-cols-1 gap-20 lg:grid-cols-2'>
 					{morePosts?.map((post) => (
 						<Post key={post.id} {...post} />

@@ -71,7 +71,11 @@ function PostPage(props: { id: string }) {
 						renderBlock={({ record }: any) => <img src={record.image.url} alt={record.image.alt} />}
 					/>
 				</section>
-				<SubTitle>Mais Artigos</SubTitle>
+				{morePosts?.allPosts?.length === 1 ? (
+					<SubTitle>Não há mais posts</SubTitle>
+				) : (
+					<SubTitle>Mais Artigos</SubTitle>
+				)}
 				<div className='grid grid-cols-1 gap-20 lg:grid-cols-2'>
 					{morePosts?.allPosts
 						.filter((post) => post.slug !== props.id)
