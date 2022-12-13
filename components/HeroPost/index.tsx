@@ -1,7 +1,5 @@
 import Link from 'next/link'
 
-//sm:max-h-hero-image
-
 function HeroPost(props: PreviewPost) {
 	return (
 		<article className='mb-20'>
